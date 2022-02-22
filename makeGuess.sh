@@ -24,7 +24,7 @@ echo "play$turn=$guess" >> game.wrdl
 ./incrTurn.sh
 ./printGame.sh
 
-if [[ "$guess" = "$word" ]]
+if [ "$guess" = "$word" ];
 then
 	echo "CORRECT! YOU WIN!"
 	./endGame.sh

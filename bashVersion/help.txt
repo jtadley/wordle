@@ -1,0 +1,16 @@
+WHAT THE DISPLAY MEANS:
+	highlighted text: letter in correct spot
+	underlined text: letter in word, but not correct spot
+	regular text: letter not in word
+
+TO SETUP A NEW GAME:
+	run: ./init.sh {word-length}
+
+TO MAKE A GUESS:
+	run: ./makeGuess.sh {word}
+
+TO CLEAN UP IF SOMETHING WENT WRONG:
+	run: ./endGame.sh
+
+TO PRINT CURRENT STATE OF GAME:
+	run: ./printGame.sh

@@ -8,9 +8,9 @@ then
 	exit
 fi
 
-word=`./getGameWord.sh`
-length=`./getGameLen.sh`
-turn=`./getGameTurn.sh`
+word=`bash getGameWord.sh`
+length=`bash getGameLen.sh`
+turn=`bash getGameTurn.sh`
 guess="$1"
 guessLen=`echo "$guess" | awk '{print length}'`
 
@@ -20,7 +20,7 @@ then
 	exit	
 fi
 
-guessIsWord=`./isWord.sh "$guess"`
+guessIsWord=`bash isWord.sh "$guess"`
 if ! [[ "$guessIsWord" == 1 ]]
 then
 	echo "guess is not a word, dummy"
@@ -28,19 +28,19 @@ then
 fi
 
 echo "play$turn=$guess" >> game.wrdl
-./incrTurn.sh
-./printGame.sh
+bash incrTurn.sh
+bash printGame.sh
 
 if [ "$guess" = "$word" ];
 then
 	echo "CORRECT! YOU WIN!"
-	./endGame.sh
+	bash endGame.sh
 else
 	echo "WRONG! IDIOT!"
 	if [ "$turn" -ge "$length" ];
 	then
 		echo "You lose. Correct word was: $word"
-		./endGame.sh
+		bash endGame.sh
 	else
 		echo "Try again..."
 	fi

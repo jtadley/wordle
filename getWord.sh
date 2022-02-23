@@ -5,12 +5,11 @@ tmpWordsFName=tmpWords.tmp
 quitVar=0
 length=$1
 
-curl -sS https://random-word-api.herokuapp.com/word?number=100 | grep -o '".*"' | sed 's/"//g' | sed 's/,/\n/g' > "$wordsFName"
+curl -sS https://random-words-api.herokuapp.com/w?n=100 | grep -o '".*"' | sed 's/"//g' | sed 's/,/\n/g' > "$wordsFName"
 
 while [[ "$quitVar" == 0 ]]
 do
 	word=`head -n 1 "$wordsFName"`
-	echo "word: $word"
 
 	if [ "$word" = "" ];
 	then

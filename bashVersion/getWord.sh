@@ -11,7 +11,7 @@ while [[ "$quitVar" == 0 ]]
 do
 	word=`head -n 1 "$wordsFName"`
 
-	if [[ -v "$word" ]]
+	if [ "$word" = "" ];
 	then
 		echo "failed to get a word"
 		quitVar=1

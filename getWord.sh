@@ -10,8 +10,9 @@ curl -sS https://random-word-api.herokuapp.com/word?number=100 | grep -o '".*"' 
 while [[ "$quitVar" == 0 ]]
 do
 	word=`head -n 1 "$wordsFName"`
+	echo "word: $word"
 
-	if [[ -v "$word" ]]
+	if [ "$word" = "" ];
 	then
 		echo "failed to get a word"
 		quitVar=1
